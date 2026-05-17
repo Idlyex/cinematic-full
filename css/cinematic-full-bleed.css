@@ -1,0 +1,158 @@
+/* ===== Cinematic Full-Bleed — Variation 3 ===== */
+/* Immersive, cinematic, photography-driven */
+
+/* --- Hero (Full-bleed with text overlay) --- */
+.hero {
+  margin-top: 0;
+  padding-top: 56px;
+  position: relative;
+  height: 90vh;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.hero__container {
+  position: relative;
+  height: 100%;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+  gap: var(--space-sm);
+}
+
+.hero__logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.hero__tagline {
+  font-family: var(--font-accent);
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero .cta-btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+}
+
+.hero .cta-btn:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+/* --- Services (Cinematic: full-width, no padding) --- */
+.services {
+  padding: 0;
+}
+
+/* Service rows use shared 50/50 from styles.css */
+
+/* --- Portfolio (uses shared grid from styles.css) --- */
+.portfolio {
+  padding: var(--space-lg) 0;
+}
+
+/* --- About (Cinematic: full-viewport with floating panel) --- */
+.about {
+  position: relative;
+  padding: var(--space-lg) var(--space-md);
+  min-height: 500px;
+}
+
+.about__container {
+  position: relative;
+}
+
+.about__image-wrap {
+  width: 100%;
+  height: 300px;
+}
+
+.about__text {
+  padding: var(--space-lg) 0;
+}
+
+@media (min-width: 900px) {
+  .about {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .about__container {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .about__image-wrap {
+    width: 55%;
+    height: 500px;
+  }
+
+  .about__text {
+    width: 45%;
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* --- Blog (Cinematic: large wide cards) --- */
+.blog__card-image {
+  height: 250px;
+}
+
+@media (min-width: 900px) {
+  .blog__scroll {
+    display: flex;
+    gap: var(--space-md);
+    overflow: visible;
+  }
+
+  .blog__card {
+    flex: 1;
+  }
+
+  .blog__card-image {
+    height: 280px;
+  }
+}
+
+
